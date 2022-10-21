@@ -21,7 +21,7 @@ st.set_page_config(
     initial_sidebar_state = 'auto'
 )
 
-st.sidebar.image('logo.png')
+st.sidebar.image('image/logo.png')
 st.sidebar.title('Steel Plate Fault Prediction')
 st.sidebar.write('---')
 
@@ -33,7 +33,7 @@ This app Predicts **Whether a Steel Plate is Faulty or Note**!
 st.write('---')
 
 # Loads Dataset
-data_path = 'steel_plates_fault.csv'
+data_path = 'data/steel_plates_fault.csv'
 data_df = pd.read_csv(data_path, encoding = 'ISO-8859-1')
 st.write(data_df.head(20))
 
@@ -134,7 +134,7 @@ X = min_max_scaler.fit_transform(X)
 
 # to retrain
 agree = st.checkbox('Check to retrain the model')
-filename = 'finalized_model.sav'
+filename = 'model/finalized_model.sav'
 if agree:
     # Build Regression Model
     model = RandomForestRegressor()
